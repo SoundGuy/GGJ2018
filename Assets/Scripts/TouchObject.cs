@@ -70,6 +70,7 @@ public class TouchObject : MonoBehaviour {
 
 	void Touched()
 	{
+		Debug.Log(Type);
 		if (Type == ObjectType.Positive)
 		{
 			if (GameController.OnPositiveObjectTouched != null)
