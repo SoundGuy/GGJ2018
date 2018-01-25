@@ -24,10 +24,11 @@ public class TouchObject : MonoBehaviour {
 	public TouchType Touch;
 	public UnityEvent OnTouch;
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider other)
 	{
-		var Hand = collision.gameObject.GetComponent<JointController>();
-		var Head = collision.gameObject.GetComponent<Camera>();
+		Debug.Log("OnTriggerEnter");
+		var Hand = other.GetComponent<JointController>();
+		var Head = other.GetComponent<Camera>();
 		switch (Touch)
 		{
 		case TouchType.All:
