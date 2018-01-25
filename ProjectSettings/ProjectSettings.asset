@@ -571,11 +571,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: GGJ2018
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00ea045d19b5d401
   metroApplicationDescription: GGJ2018
   wsaImages: {}
   metroTileShortName: 
