@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public static PlayerController Instance;
+
 	public Transform Head;
 	public Transform LeftHand;
 	public Transform RightHand;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Awake()
+	{
+		Instance = this;
 	}
 }
