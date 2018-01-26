@@ -21,16 +21,25 @@ public class TouchObject : MonoBehaviour {
 		All
 	}
 
+
+
 	public static Action<TouchObject> Touched;
 
 	public ObjectType Type;
 	public TouchType Touch;
 	public UnityEvent OnTouch;
 
+	public int TouchLimit;
+
+	private int touchCount;
 
 	void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("OnTriggerEnter");
+
+		if (TouchLimit > 0 && ++touchCount > TouchLimit)
+			return;
+
 		var Hand = other.GetComponent<JointController>();
 		var Head = other.GetComponent<Camera>();
 		switch (Touch)
