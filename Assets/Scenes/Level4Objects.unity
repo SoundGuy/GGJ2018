@@ -113,6 +113,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &117767796 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+  m_PrefabInternal: {fileID: 142220222}
+--- !u!95 &117767797
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117767796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8428526391505a343a8d4c037ee61a64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &142220222
 Prefab:
   m_ObjectHideFlags: 0
@@ -215,6 +236,26 @@ Prefab:
     - target: {fileID: 22495902, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.20142633
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_text
+      value: Glercbach
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
