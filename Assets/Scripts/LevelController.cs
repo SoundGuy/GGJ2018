@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour {
-	const int NumOfButtons = 4;
+	public const int NumOfButtons = 4;
 
 	public static Action<LevelController> OnLevelEnd;
 
@@ -70,7 +70,8 @@ public class LevelController : MonoBehaviour {
 	public void SetTeleportButton()
 	{
 		EndButton = 0;
-		ButtonsTexts[1] = "Teleport";
+		ButtonsTexts[0] = "Teleport";
+		EnabledButtons[0] = true;
 		for (int i=1; i<NumOfButtons; i++)
 		{
 			EnabledButtons[i] = false;
