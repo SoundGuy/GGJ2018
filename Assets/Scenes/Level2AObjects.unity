@@ -233,9 +233,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f54f2af42e5d49ac50e34cb389288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsRiddle: 0
   ActionsOrder:
   - {fileID: 840918163}
   - {fileID: 423084258}
+  EndButton: 0
+  EnabledButtons: 00000000
+  ButtonsTexts:
+  - 
+  - 
+  - 
+  - 
+  ButtonsImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0

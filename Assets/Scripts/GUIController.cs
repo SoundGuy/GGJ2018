@@ -12,12 +12,17 @@ public class GUIController : MonoBehaviour {
 	public Button[] Buttons;
 	public Text[] ButtonsTexts;
 	public Image[] ButtonsImages;
+    public Text topText;
 
 	void Awake()
 	{
 		Instance = this;
 	}
 
+    public void SetTopText(string inText)
+    {
+        topText.text = inText;
+    }
 	public void SetButtonEnable(int id, bool enabled)
 	{
 		Buttons[id].interactable = enabled;

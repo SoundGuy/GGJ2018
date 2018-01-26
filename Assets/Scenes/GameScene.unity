@@ -1531,6 +1531,7 @@ MonoBehaviour:
   - RoomSetup
   - UI
   ScenesOrder:
+  - Level0Objects
   - LevelObjects
   - Level2Objects
   - Level2AObjects

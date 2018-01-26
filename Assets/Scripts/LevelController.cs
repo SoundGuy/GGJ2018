@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public class LevelController : MonoBehaviour {
 	public const int NumOfButtons = 4;
@@ -18,6 +20,9 @@ public class LevelController : MonoBehaviour {
 	public string[] ButtonsTexts = new string[NumOfButtons];
 	public Sprite[] ButtonsImages = new Sprite[NumOfButtons];
 
+
+    public string LevelString;
+  
 	void OnEnable()
 	{
 		Goal.Complete += OnTouchedOcject;
@@ -29,7 +34,11 @@ public class LevelController : MonoBehaviour {
 		{
 			SetTeleportButton();
 		}
-	}
+
+        GUIController.Instance.SetTopText(LevelString);
+
+
+    }
 
 	void OnDisable()
 	{
