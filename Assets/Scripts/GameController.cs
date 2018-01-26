@@ -21,7 +21,25 @@ public class GameController : MonoBehaviour {
 	{
 		foreach(var sceneName in StartScenes)
 		{
-			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+			if (SceneManager.GetSceneByName(sceneName) == null)
+			{
+				SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+			}
+		}
+		LoadFirstLevel();
+	}
+
+	void LoadFirstLevel()
+	{
+		int i = 0;
+		foreach (var sceneName in ScenesOrder)
+		{
+			if (SceneManager.GetSceneByName(sceneName) != null)
+			{
+				currentScene = i;
+				return;
+			}
+			i++;
 		}
 		LoadCurrentScene();
 	}
