@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
 	public string[] ScenesOrder;
 	private int currentScene = 0;
 
-	public float LevelEndWaitTime = 5f;
+	public float LevelEndWaitTime = 1f;
 
 	private List<Scene> loadedScenes = new List<Scene>();
 
@@ -66,14 +66,6 @@ public class GameController : MonoBehaviour {
 		GUIController.OnButtonClick += OnGUIButtonClick;
 	}
 
-	void OnGUIButtonClick(int id)
-	{
-		if (correctButton == id)
-		{
-			NextLevel();
-		}
-	}
-
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		loadedScenes.Add(scene);
@@ -106,7 +98,15 @@ public class GameController : MonoBehaviour {
 				}
 			}
 		}
-		//Instance.StartCoroutine(DelayLevelEnd());
+	}
+
+	void OnGUIButtonClick(int id)
+	{
+		if (correctButton == id)
+		{
+			Teleporter.StartTeleporter();
+			Instance.StartCoroutine(DelayLevelEnd());
+		}
 	}
 
 	IEnumerator DelayLevelEnd()
