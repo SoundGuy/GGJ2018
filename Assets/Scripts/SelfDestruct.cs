@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour {
 
+
     void SelfDestructMe()
+    {
+        Destroy(gameObject);
+    }
+
+
+    void SelfDestructParent()
     {
         Destroy(gameObject.transform.parent.gameObject);
     }
