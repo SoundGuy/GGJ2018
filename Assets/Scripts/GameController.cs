@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 	public string[] ScenesOrder;
 	private int currentScene = 0;
 
+	public float LevelEndWaitTime = 5f;
+
 	private List<Scene> loadedScenes = new List<Scene>();
 
 	void Awake()
@@ -75,6 +77,12 @@ public class GameController : MonoBehaviour {
 
 	void HandleOnLevelEnd(LevelController levelController)
 	{
+		Instance.StartCoroutine(DelayLevelEnd());
+	}
+
+	IEnumerator DelayLevelEnd()
+	{
+		yield return new WaitForSeconds(LevelEndWaitTime);
 		UnloadCurrentScene();
 		currentScene++;
 		LoadCurrentScene();
