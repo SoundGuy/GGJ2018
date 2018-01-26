@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class TouchObject : MonoBehaviour {
 
@@ -20,9 +21,12 @@ public class TouchObject : MonoBehaviour {
 		All
 	}
 
+	public static Action<TouchObject> Touched;
+
 	public ObjectType Type;
 	public TouchType Touch;
 	public UnityEvent OnTouch;
+
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -34,57 +38,38 @@ public class TouchObject : MonoBehaviour {
 		case TouchType.All:
 			if (Head != null || Hand != null)
 			{
-				Touched();
+				Touched(this);
 				OnTouch.Invoke();
 			}
 			break;
 		case TouchType.BothHands:
 			if (Hand != null)
 			{
-				Touched();
+				Touched(this);
 				OnTouch.Invoke();
 			}
 			break;
 		case TouchType.Head:
 			if (Head != null)
 			{
-				Touched();
+				Touched(this);
 				OnTouch.Invoke();
 			}
 			break;
 		case TouchType.LeftHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.LeftHand)
 			{
-				Touched();
+				Touched(this);
 				OnTouch.Invoke();
 			}
 			break;
 		case TouchType.RightHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.RightHand)
 			{
-				Touched();
+				Touched(this);
 				OnTouch.Invoke();
 			}
 			break;
-		}
-	}
-
-	void Touched()
-	{
-		Debug.Log(Type);
-		if (Type == ObjectType.Positive)
-		{
-			if (GameController.OnPositiveObjectTouched != null)
-			{
-				GameController.OnPositiveObjectTouched();
-			}
-		}
-		else
-		{
-			if (GameController.OnNegativeObjectTouched != null)
-			{
-				GameController.OnNegativeObjectTouched();
-			}
 		}
 	}
 }
