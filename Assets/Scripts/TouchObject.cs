@@ -25,6 +25,7 @@ public class TouchObject : Goal {
     public GameObject TouchingMe { get; private set; }
     public Collider OtherTarget;
     public bool Movable;
+    public bool ClickToComplete;
 
 	public static Action<TouchObject> Touched;
 
@@ -57,6 +58,10 @@ public class TouchObject : Goal {
                 transform.SetParent(oldParent);
                 oldParent = null;
             }
+        }
+        if(ClickToComplete && (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null)
+        {
+            CompleteGoal();
         }
     }
     void OnTriggerEnter(Collider other)
@@ -126,7 +131,10 @@ public class TouchObject : Goal {
 		if (Touched != null)
 			Touched (this);
 		OnTouch.Invoke();
-        CompleteGoal();
+
+        if(!ClickToComplete)
+            CompleteGoal();
+
         TouchingMe = other;
 	}
 
