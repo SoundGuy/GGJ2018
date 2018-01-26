@@ -21,6 +21,11 @@ public class GUIController : MonoBehaviour {
 	public void SetButtonEnable(int id, bool enabled)
 	{
 		Buttons[id].enabled = enabled;
+		if (!enabled)
+		{
+			ButtonsTexts[id].gameObject.SetActive(false);
+			ButtonsImages[id].gameObject.SetActive(false);
+		}
 	}
 
 	public void SetButtonText(int id, string text)

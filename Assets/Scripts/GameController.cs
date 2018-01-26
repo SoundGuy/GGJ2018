@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour {
 		LevelController.OnLevelEnd += HandleOnLevelEnd;
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		SceneManager.sceneUnloaded += OnSceneUnloaded;
+		GUIController.OnButtonClick += OnGUIButtonClick;
 	}
 
 	void OnDisable()
@@ -60,6 +61,12 @@ public class GameController : MonoBehaviour {
 		LevelController.OnLevelEnd -= HandleOnLevelEnd;
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 		SceneManager.sceneUnloaded -= OnSceneUnloaded;
+		GUIController.OnButtonClick += OnGUIButtonClick;
+	}
+
+	void OnGUIButtonClick(int id)
+	{
+		
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
