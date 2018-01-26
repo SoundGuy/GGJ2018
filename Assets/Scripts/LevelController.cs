@@ -10,6 +10,11 @@ public class LevelController : MonoBehaviour {
 	public Goal[] ActionsOrder;
 	private int currentOrder = 0;
 
+	public int EndButton = 0;
+	public bool[] EnabledButtons = new bool[4];
+	public string[] ButtonsTexts = new string[4];
+	public Sprite[] ButtonsImages = new Sprite[4];
+
 	void OnEnable()
 	{
 		Goal.Complete += OnTouchedOcject;
