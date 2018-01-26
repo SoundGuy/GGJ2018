@@ -40,6 +40,14 @@ public class TouchObject : Goal {
         get; protected set;
     }
 
+    public bool IsHeld
+    {
+        get
+        {
+            return (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null;
+        }
+    }
+
 	private int touchCount;
 
     private Transform oldParent;
@@ -59,7 +67,7 @@ public class TouchObject : Goal {
                 oldParent = null;
             }
         }
-        if(ClickToComplete && (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null)
+        if(ClickToComplete && IsHeld)
         {
             CompleteGoal();
         }
