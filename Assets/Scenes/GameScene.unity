@@ -1490,6 +1490,7 @@ MonoBehaviour:
   ScenesOrder:
   - LevelObjects
   - Level2Objects
+  - Level2AObjects
   - Level3Objects
   - Level4Objects
   - EndScene
