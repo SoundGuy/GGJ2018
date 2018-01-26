@@ -45,7 +45,7 @@ public class TouchObject : Goal {
     {
         if (Movable)
         {
-            if (oldParent == null && Input.GetAxis(InputAxisName) > 0.9f && TouchingMe != null)
+            if (oldParent == null && Input.GetButton(InputAxisName) && TouchingMe != null)
             {
                 oldParent = transform.parent;
                 transform.SetParent(TouchingMe.transform);
