@@ -20,7 +20,7 @@ public class TouchObject : MonoBehaviour {
 		BothHands,
 		All
 	}
-
+	public List<int> fake;
 	public static Action<TouchObject> Touched;
 
 	public ObjectType Type;
@@ -38,38 +38,40 @@ public class TouchObject : MonoBehaviour {
 		case TouchType.All:
 			if (Head != null || Hand != null)
 			{
-				Touched(this);
-				OnTouch.Invoke();
+				CallTouched();
 			}
 			break;
 		case TouchType.BothHands:
 			if (Hand != null)
 			{
-				Touched(this);
-				OnTouch.Invoke();
+				CallTouched();
 			}
 			break;
 		case TouchType.Head:
 			if (Head != null)
 			{
-				Touched(this);
-				OnTouch.Invoke();
+				CallTouched();
 			}
 			break;
 		case TouchType.LeftHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.LeftHand)
 			{
-				Touched(this);
-				OnTouch.Invoke();
+				CallTouched();
 			}
 			break;
 		case TouchType.RightHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.RightHand)
 			{
-				Touched(this);
-				OnTouch.Invoke();
+				CallTouched();
 			}
 			break;
 		}
+	}
+
+	private void CallTouched ()
+	{
+		if (Touched != null)
+			Touched (this);
+		OnTouch.Invoke();
 	}
 }
