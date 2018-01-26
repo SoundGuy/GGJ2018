@@ -25,11 +25,24 @@ public class GUIController : MonoBehaviour {
     }
 	public void SetButtonEnable(int id, bool enabled)
 	{
-		Buttons[id].interactable = enabled;
+		Buttons[id].gameObject.SetActive(enabled);
 		if (!enabled)
 		{
 			ButtonsTexts[id].gameObject.SetActive(false);
 			ButtonsImages[id].gameObject.SetActive(false);
+		}
+		if (id == LevelController.NumOfButtons-1)
+		{
+			var btn0 = Buttons[0].GetComponent<RectTransform>();
+			var btn3 = Buttons[3].GetComponent<RectTransform>();
+			if (enabled)
+			{
+				btn0.anchoredPosition = new Vector2(-btn3.anchoredPosition.x, btn3.anchoredPosition.y);
+			}
+			else
+			{
+				btn0.anchoredPosition = new Vector2(0, btn3.anchoredPosition.y);
+			}
 		}
 	}
 
