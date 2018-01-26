@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f54f2af42e5d49ac50e34cb389288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsRiddle: 0
+  IsRiddle: 1
   ActionsOrder:
   - {fileID: 396709524}
   EndButton: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  LevelString: 
+  LevelString: Get the code off the screen.
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0
