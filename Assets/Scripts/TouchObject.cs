@@ -20,8 +20,9 @@ public class TouchObject : Goal {
 		BothHands,
 		All
 	}
-
-
+    public string InputAxisName;
+    public GameObject TouchingMe { get; private set; }
+    public bool Movable;
 
 	public static Action<TouchObject> Touched;
 
@@ -38,14 +39,32 @@ public class TouchObject : Goal {
 
 	private int touchCount;
 
-	void OnTriggerEnter(Collider other)
+    private Transform oldParent;
+
+    private void Update()
+    {
+        if (Movable)
+        {
+            if (oldParent == null && Input.GetButton(InputAxisName) && TouchingMe != null)
+            {
+                oldParent = transform.parent;
+                transform.SetParent(TouchingMe.transform);
+            }
+            else
+            {
+                transform.SetParent(oldParent);
+                oldParent = null;
+            }
+        }
+    }
+    void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("OnTriggerEnter");
 
         //here be dragons this should be moved somewhere else becasue now the trigger enter isnt the goal necceseraly
 		if (TouchLimit > 0 && ++touchCount > TouchLimit)
 			return;
-
+        var otherGo = other.gameObject;
 		var Hand = other.GetComponent<JointController>();
 		var Head = other.GetComponent<Camera>();
 		switch (Touch)
@@ -53,31 +72,31 @@ public class TouchObject : Goal {
 		case TouchType.All:
 			if (Head != null || Hand != null)
 			{
-				CallTouched();
+				CallTouched(otherGo);
 			}
 			break;
 		case TouchType.BothHands:
 			if (Hand != null)
 			{
-				CallTouched();
+				CallTouched(otherGo);
 			}
 			break;
 		case TouchType.Head:
 			if (Head != null)
 			{
-				CallTouched();
+				CallTouched(otherGo);
 			}
 			break;
 		case TouchType.LeftHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.LeftHand)
 			{
-				CallTouched();
+				CallTouched(otherGo);
 			}
 			break;
 		case TouchType.RightHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.RightHand)
 			{
-				CallTouched();
+				CallTouched(otherGo);
 			}
 			break;
 		}
@@ -86,14 +105,22 @@ public class TouchObject : Goal {
     private void OnTriggerExit(Collider other)
     {
         IsTouched = false;
+
+        if(other.gameObject == TouchingMe)
+        {
+            TouchingMe = null;
+        }
     }
 
-    private void CallTouched ()
+    private void CallTouched (GameObject other)
 	{
         IsTouched = true;
 		if (Touched != null)
 			Touched (this);
 		OnTouch.Invoke();
         CompleteGoal();
+        TouchingMe = other;
 	}
+
+
 }
