@@ -9,12 +9,18 @@ public class GUIController : MonoBehaviour {
 
 	public static GUIController Instance;
 
+	public Button[] Buttons;
 	public Text[] ButtonsTexts;
 	public Image[] ButtonsImages;
 
 	void Awake()
 	{
 		Instance = this;
+	}
+
+	public void SetButtonEnable(int id, bool enabled)
+	{
+		Buttons[id].enabled = enabled;
 	}
 
 	public void SetButtonText(int id, string text)
