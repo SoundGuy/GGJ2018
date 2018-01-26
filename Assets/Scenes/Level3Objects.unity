@@ -200,7 +200,7 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: Touch
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
@@ -305,7 +305,7 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: Touch
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23810444773783280, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
