@@ -352,17 +352,22 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 505368580}
     m_Modifications:
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.72
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.8
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalRotation.x
@@ -388,12 +393,67 @@ Prefab:
       propertyPath: m_Name
       value: Cube (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: Movable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: InputAxisName
+      value: Right Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 840918163}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95586319714674436, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535039040977904, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &542720841 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db,
+    type: 2}
+  m_PrefabInternal: {fileID: 542720840}
+--- !u!65 &542720842 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65874064634598156, guid: 32cb3806439534c45b90fd0310ab25db,
     type: 2}
   m_PrefabInternal: {fileID: 542720840}
 --- !u!114 &840918163 stripped
@@ -641,7 +701,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  LevelString: Pull the lever up!
+  LevelString: Pick up and insert Keycard
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0
@@ -664,15 +724,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.75
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.51
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.7
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalRotation.x
@@ -698,6 +758,16 @@ Prefab:
       propertyPath: m_Name
       value: Cube (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: Touch
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OtherTarget
+      value: 
+      objectReference: {fileID: 542720842}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
