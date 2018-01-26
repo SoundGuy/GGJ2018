@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-public class TouchObject : MonoBehaviour {
+public class TouchObject : Goal {
 
 	public enum ObjectType
 	{
@@ -31,12 +31,18 @@ public class TouchObject : MonoBehaviour {
 
 	public int TouchLimit;
 
+    public bool IsTouched
+    {
+        get; protected set;
+    }
+
 	private int touchCount;
 
 	void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("OnTriggerEnter");
 
+        //here be dragons this should be moved somewhere else becasue now the trigger enter isnt the goal necceseraly
 		if (TouchLimit > 0 && ++touchCount > TouchLimit)
 			return;
 
@@ -77,10 +83,17 @@ public class TouchObject : MonoBehaviour {
 		}
 	}
 
-	private void CallTouched ()
+    private void OnTriggerExit(Collider other)
+    {
+        IsTouched = false;
+    }
+
+    private void CallTouched ()
 	{
+        IsTouched = true;
 		if (Touched != null)
 			Touched (this);
 		OnTouch.Invoke();
+        CompleteGoal();
 	}
 }
