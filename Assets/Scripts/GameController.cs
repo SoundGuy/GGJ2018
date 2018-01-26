@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 	public string[] ScenesOrder;
 	private int currentScene = 0;
 
+	private List<Scene> loadedScenes = new List<Scene>();
+
 	void Awake()
 	{
 		Instance = this;
@@ -21,7 +23,7 @@ public class GameController : MonoBehaviour {
 	{
 		foreach(var sceneName in StartScenes)
 		{
-			//if (SceneManager.GetSceneByName(sceneName) == null)
+			if (!loadedScenes.Contains(SceneManager.GetSceneByName(sceneName)))
 			{
 				SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 			}
@@ -31,27 +33,44 @@ public class GameController : MonoBehaviour {
 
 	void LoadFirstLevel()
 	{
-		/*int i = 0;
+		int i = 0;
 		foreach (var sceneName in ScenesOrder)
 		{
-			if (SceneManager.GetSceneByName(sceneName) != null)
+			if (loadedScenes.Contains(SceneManager.GetSceneByName(sceneName)))
 			{
 				currentScene = i;
 				return;
 			}
 			i++;
-		}*/
+		}
 		LoadCurrentScene();
 	}
 
 	void OnEnable()
 	{
 		LevelController.OnLevelEnd += HandleOnLevelEnd;
+		SceneManager.sceneLoaded += OnSceneLoaded;
+		SceneManager.sceneUnloaded += OnSceneUnloaded;
 	}
 
 	void OnDisable()
 	{
 		LevelController.OnLevelEnd -= HandleOnLevelEnd;
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+		SceneManager.sceneUnloaded -= OnSceneUnloaded;
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		loadedScenes.Add(scene);
+	}
+
+	void OnSceneUnloaded(Scene scene)
+	{
+		if (loadedScenes.Contains(scene))
+		{
+			loadedScenes.Remove(scene);
+		}
 	}
 
 	void HandleOnLevelEnd(LevelController levelController)
