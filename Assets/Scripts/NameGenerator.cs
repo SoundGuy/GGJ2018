@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class NameGenerator : MonoBehaviour {
 
+	public static NameGenerator Instance;
+
     public List<string> prefixes;
     public List<string> syllables;
     public List<string> suffixes;
     public int percengateOfThreesyllableWord = 2;
 
-    List<string> getSimilarWords(int num)
+	private void Awake()
+	{
+		Instance = this;
+	}
+
+    public List<string> GetSimilarWords(int num)
     {
 
 
@@ -62,10 +69,5 @@ public class NameGenerator : MonoBehaviour {
             Debug.Log(string.Format("{0} {1} {2} {3}", Namestr[0], Namestr[1], Namestr[2], Namestr[3]));
         }
         */
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
