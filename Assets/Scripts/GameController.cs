@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour {
 	{
 		foreach(var sceneName in StartScenes)
 		{
-			if (SceneManager.GetSceneByName(sceneName) == null)
+			//if (SceneManager.GetSceneByName(sceneName) == null)
 			{
 				SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 			}
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour {
 
 	void LoadFirstLevel()
 	{
-		int i = 0;
+		/*int i = 0;
 		foreach (var sceneName in ScenesOrder)
 		{
 			if (SceneManager.GetSceneByName(sceneName) != null)
@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
 				return;
 			}
 			i++;
-		}
+		}*/
 		LoadCurrentScene();
 	}
 
