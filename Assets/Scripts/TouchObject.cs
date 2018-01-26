@@ -47,7 +47,7 @@ public class TouchObject : Goal {
     {
         if (Movable)
         {
-            if (oldParent == null && Input.GetButton(InputAxisName) && TouchingMe != null)
+            if (oldParent == null && (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null)
             {
                 oldParent = transform.parent;
                 transform.SetParent(TouchingMe.transform);
