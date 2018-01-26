@@ -9,10 +9,12 @@ public class LevelController : MonoBehaviour {
 
 	void OnEnable()
 	{
+		TouchObject.Touched += OnTouchedOcject;
 	}
 
 	void OnDisable()
 	{
+		TouchObject.Touched -= OnTouchedOcject;
 	}
 
 	void OnTouchedOcject(TouchObject touchObject)
@@ -20,7 +22,7 @@ public class LevelController : MonoBehaviour {
 		if (ActionsOrder[currentOrder] == touchObject.GetInstanceID())
 		{
 			currentOrder++;
-			if (currentOrder = ActionsOrder.Length)
+			if (currentOrder == ActionsOrder.Length)
 			{
 				LoadNextLevel();
 			}
