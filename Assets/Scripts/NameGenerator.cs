@@ -21,8 +21,8 @@ public class NameGenerator : MonoBehaviour {
         for (int i=0;i<num;i++) {
             int newPrefixNum = (i%2==0)? pref : ((pref + i) % prefixes.Count);
             int newSuufiexNum = (i % 2 != 0) ? suff : ((suff + i) % suffixes.Count);
-            string suffix = prefixes[newPrefixNum];
-            string prefix = suffixes[newSuufiexNum];
+            string prefix  = prefixes[newPrefixNum];
+            string suffix = suffixes[newSuufiexNum];
             string name = string.Format("{0}{1}", prefix, suffix);
         retVal.Add(name);
         }
@@ -55,10 +55,13 @@ public class NameGenerator : MonoBehaviour {
 }
     // Use this for initialization
     void Start () {
-		for (int i=0;i<50;i++ )
+        /*
+        for (int i = 0; i < 50; i++)
         {
-            Debug.Log(getRandomWord());
+            List<string> Namestr = getSimilarWords(4);
+            Debug.Log(string.Format("{0} {1} {2} {3}", Namestr[0], Namestr[1], Namestr[2], Namestr[3]));
         }
+        */
 	}
 	
 	// Update is called once per frame
