@@ -6,8 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
+	public static GameController Instance;
+
+	public string[] StartScenes;
 	public string[] ScenesOrder;
-	private int currentScene;
+	private int currentScene = -1;
+
+	void Awake()
+	{
+		Instance = this;
+	}
+
+	void Start()
+	{
+		foreach(var sceneName in StartScenes)
+		{
+			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+		}
+	}
 
 	void OnEnable()
 	{
@@ -21,7 +37,18 @@ public class GameController : MonoBehaviour {
 
 	void HandleOnLevelEnd(LevelController levelController)
 	{
-		SceneManager.LoadScene(ScenesOrder[currentScene], LoadSceneMode.Additive);
+		UnloadCurrentScene();
 		currentScene++;
+		LoadCurrentScene();
+	}
+
+	void LoadCurrentScene()
+	{
+		SceneManager.LoadScene(ScenesOrder[currentScene], LoadSceneMode.Additive);
+	}
+
+	void UnloadCurrentScene()
+	{
+		SceneManager.UnloadSceneAsync(ScenesOrder[currentScene]);
 	}
 }
