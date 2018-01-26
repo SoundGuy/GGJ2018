@@ -2,19 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-	public static Action OnPositiveObjectTouched;
-	public static Action OnNegativeObjectTouched;
+	public string[] ScenesOrder;
+	private int currentScene;
 
-	// Use this for initialization
-	void Start () {
-		
+	void OnEnable()
+	{
+		LevelController.OnLevelEnd += HandleOnLevelEnd;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void OnDisable()
+	{
+		LevelController.OnLevelEnd -= HandleOnLevelEnd;
+	}
+
+	void HandleOnLevelEnd(LevelController levelController)
+	{
+		SceneManager.LoadScene(ScenesOrder[currentScene], LoadSceneMode.Additive);
+		currentScene++;
 	}
 }

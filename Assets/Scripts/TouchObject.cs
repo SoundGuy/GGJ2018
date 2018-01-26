@@ -20,7 +20,7 @@ public class TouchObject : MonoBehaviour {
 		BothHands,
 		All
 	}
-	public List<int> fake;
+
 	public static Action<TouchObject> Touched;
 
 	public ObjectType Type;

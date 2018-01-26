@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour {
 
-	public int[] ActionsOrder;
+	public static Action<LevelController> OnLevelEnd;
+
+	public TouchObject[] ActionsOrder;
 	private int currentOrder = 0;
 
 	void OnEnable()
@@ -19,17 +22,21 @@ public class LevelController : MonoBehaviour {
 
 	void OnTouchedOcject(TouchObject touchObject)
 	{
-		if (ActionsOrder[currentOrder] == touchObject.GetInstanceID())
+		if (ActionsOrder[currentOrder] == touchObject)
 		{
 			currentOrder++;
 			if (currentOrder == ActionsOrder.Length)
 			{
-				LoadNextLevel();
+				FinishLevel();
 			}
 		}
 	}
 
-	void LoadNextLevel()
+	void FinishLevel()
 	{
+		if (OnLevelEnd != null)
+		{
+			OnLevelEnd(this);
+		}
 	}
 }
