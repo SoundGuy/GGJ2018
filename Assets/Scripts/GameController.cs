@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 
 	public string[] StartScenes;
 	public string[] ScenesOrder;
-	private int currentScene = -1;
+	private int currentScene = 0;
 
 	void Awake()
 	{
@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 		{
 			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 		}
+		LoadCurrentScene();
 	}
 
 	void OnEnable()
@@ -44,11 +45,13 @@ public class GameController : MonoBehaviour {
 
 	void LoadCurrentScene()
 	{
+		Debug.Log("LoadScene " + currentScene);
 		SceneManager.LoadScene(ScenesOrder[currentScene], LoadSceneMode.Additive);
 	}
 
 	void UnloadCurrentScene()
 	{
+		Debug.Log("UnloadScene " + currentScene);
 		SceneManager.UnloadSceneAsync(ScenesOrder[currentScene]);
 	}
 }
