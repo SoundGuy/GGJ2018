@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
 
 	private List<Scene> loadedScenes = new List<Scene>();
 
+	private int correctButton = 0;
+
 	void Awake()
 	{
 		Instance = this;
@@ -66,7 +68,10 @@ public class GameController : MonoBehaviour {
 
 	void OnGUIButtonClick(int id)
 	{
-		
+		if (correctButton == id)
+		{
+			NextLevel();
+		}
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -84,12 +89,34 @@ public class GameController : MonoBehaviour {
 
 	void HandleOnLevelEnd(LevelController levelController)
 	{
-		Instance.StartCoroutine(DelayLevelEnd());
+		correctButton = levelController.EndButton;
+		//GUIController.Instance.SetButtonEnable();
+		for (int i=0; i<levelController.EnabledButtons.Length; i++)
+		{
+			GUIController.Instance.SetButtonEnable(i, levelController.EnabledButtons[i]);
+			if (levelController.EnabledButtons[i])
+			{
+				if (levelController.ButtonsImages[i] == null)
+				{
+					GUIController.Instance.SetButtonText(i, levelController.ButtonsTexts[i]);
+				}
+				else
+				{
+					GUIController.Instance.SetButtonImage(i, levelController.ButtonsImages[i]);
+				}
+			}
+		}
+		//Instance.StartCoroutine(DelayLevelEnd());
 	}
 
 	IEnumerator DelayLevelEnd()
 	{
 		yield return new WaitForSeconds(LevelEndWaitTime);
+		NextLevel();
+	}
+
+	void NextLevel()
+	{
 		UnloadCurrentScene();
 		currentScene++;
 		LoadCurrentScene();
