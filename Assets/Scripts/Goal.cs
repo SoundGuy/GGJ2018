@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 public class Goal : MonoBehaviour {
-    public Action<Goal> Complete;
+    public static Action<Goal> Complete;
 
     protected void CompleteGoal()
     {

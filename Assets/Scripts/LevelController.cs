@@ -7,24 +7,24 @@ public class LevelController : MonoBehaviour {
 
 	public static Action<LevelController> OnLevelEnd;
 
-	public TouchObject[] ActionsOrder;
+	public Goal[] ActionsOrder;
 	private int currentOrder = 0;
 
 	void OnEnable()
 	{
-		TouchObject.Touched += OnTouchedOcject;
+		Goal.Complete += OnTouchedOcject;
 	}
 
 	void OnDisable()
 	{
-		TouchObject.Touched -= OnTouchedOcject;
+		Goal.Complete -= OnTouchedOcject;
 	}
 
-	void OnTouchedOcject(TouchObject touchObject)
+	void OnTouchedOcject(Goal touchObject)
 	{
-		if (ActionsOrder[currentOrder] == touchObject)
+		if (currentOrder< ActionsOrder.Length && ActionsOrder[currentOrder] == touchObject)
 		{
-			currentOrder++;
+            currentOrder++;
 			if (currentOrder == ActionsOrder.Length)
 			{
 				FinishLevel();
