@@ -18,10 +18,12 @@ public class TouchObject : Goal {
 		LeftHand,
 		RightHand,
 		BothHands,
-		All
+		All,
+        Other
 	}
     public string InputAxisName;
     public GameObject TouchingMe { get; private set; }
+    public Collider OtherTarget;
     public bool Movable;
 
 	public static Action<TouchObject> Touched;
@@ -99,6 +101,12 @@ public class TouchObject : Goal {
 				CallTouched(otherGo);
 			}
 			break;
+        case TouchType.Other:
+            if(other == OtherTarget)
+            {
+                CallTouched(otherGo);
+            }
+            break;
 		}
 	}
 
