@@ -162,8 +162,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Hello!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cc25b1bbaa3d983468e14d80ac3ac8ba, type: 2}
+  m_sharedMaterial: {fileID: 21568677201612596, guid: cc25b1bbaa3d983468e14d80ac3ac8ba,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -276,7 +277,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  - {fileID: 21568677201612596, guid: cc25b1bbaa3d983468e14d80ac3ac8ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -444,6 +445,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   LevelString: Wait for asronaut to press button.
+  ResetCountOnWrongActionOrder: 0
+  ResetOnFailedGoal: 0
 --- !u!4 &850349571
 Transform:
   m_ObjectHideFlags: 0
@@ -584,6 +587,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21568677201612596, guid: cc25b1bbaa3d983468e14d80ac3ac8ba,
+        type: 2}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cc25b1bbaa3d983468e14d80ac3ac8ba,
+        type: 2}
+    - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21568677201612596, guid: cc25b1bbaa3d983468e14d80ac3ac8ba,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
   m_IsPrefabParent: 0

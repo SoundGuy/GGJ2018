@@ -368,6 +368,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   LevelString: Step onto the teleporter.
+  ResetCountOnWrongActionOrder: 0
+  ResetOnFailedGoal: 0
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0
