@@ -55,20 +55,23 @@ public class TouchObject : Goal {
 	private int touchCount;
 
     private Transform oldParent;
-
+    private void Start()
+    {
+        oldParent = transform.parent;
+    }
     private void Update()
     {
         if (Movable)
         {
-            if (oldParent == null && IsHeld)
+            if (transform.parent == oldParent)
             {
-                oldParent = transform.parent;
-                transform.SetParent(TouchingMe.transform);
+                if(IsHeld)
+                    transform.SetParent(TouchingMe.transform);
             }
             else
             {
-                transform.SetParent(oldParent);
-                oldParent = null;
+                if(!IsHeld)
+                    transform.SetParent(oldParent);
             }
         }
         if(ClickToComplete && IsHeld)
@@ -164,5 +167,8 @@ public class TouchObject : Goal {
         TouchingMe = other.GetComponent<JointController>();
 	}
 
-
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }
