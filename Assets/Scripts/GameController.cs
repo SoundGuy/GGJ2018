@@ -110,6 +110,13 @@ public class GameController : MonoBehaviour {
 	{
 		if (correctButton == id)
 		{
+			if (GUIController.Instance != null)
+			{
+				for (int i=0; i<LevelController.NumOfButtons; i++)
+				{
+					GUIController.Instance.SetButtonEnable(i, false);
+				}
+			}
 			Teleporter.StartTeleporter();
 			Instance.StartCoroutine(DelayLevelEnd());
 		}
