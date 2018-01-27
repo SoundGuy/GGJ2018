@@ -61,7 +61,6 @@ MonoBehaviour:
   - GetFirstCode
   - ButtonsInRightOrder
   - Keycard
-  - ByOrder
   - TwoAtOnce
   - EndScene
   LevelEndWaitTime: 1
