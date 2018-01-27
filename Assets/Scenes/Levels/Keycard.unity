@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f54f2af42e5d49ac50e34cb389288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsRiddle: 1
+  IsRiddle: 0
   ActionsOrder:
   - {fileID: 840918163}
   - {fileID: 423084258}
