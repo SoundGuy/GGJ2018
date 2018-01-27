@@ -136,7 +136,7 @@ public class TouchObject : Goal {
     {
         IsTouched = false;
 
-        if(other.gameObject == TouchingMe)
+        if(other.gameObject == TouchingMe.gameObject)
         {
             TouchingMe = null;
         }
