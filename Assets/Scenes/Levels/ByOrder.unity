@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (8)
+      value: Cube L Activated Top
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -211,6 +211,11 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: FailOnWrongTouch
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -468,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundOnComplete: {fileID: 0}
+  SoundOnFailure: {fileID: 0}
   SubGoals:
   - {fileID: 840918163}
   - {fileID: 423084258}
@@ -512,7 +518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (5)
+      value: Cube R Activated Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 23810444773783280, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -523,6 +529,11 @@ Prefab:
         type: 2}
       propertyPath: Touch
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: FailOnWrongTouch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
@@ -1332,7 +1343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsRiddle: 1
   ActionsOrder:
-  - {fileID: 505368581}
+  - {fileID: 423084258}
+  - {fileID: 840918163}
   EndButton: 0
   EnabledButtons: 00000000
   ButtonsTexts:
@@ -1346,6 +1358,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   LevelString: Notice the RIGHT order.
+  ResetCountOnWrongActionOrder: 1
+  ResetOnFailedGoal: 1
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0
@@ -1400,7 +1414,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (6)
+      value: Cube L Activated Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -1412,6 +1426,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c65c6f4646d8a34c9d62403b7bcccc2, type: 2}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: FailOnWrongTouch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
@@ -1570,7 +1589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (7)
+      value: Cube R Activated Top
       objectReference: {fileID: 0}
     - target: {fileID: 23810444773783280, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -1593,6 +1612,11 @@ Prefab:
     - target: {fileID: 4037880425252004, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.15373999
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: FailOnWrongTouch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}

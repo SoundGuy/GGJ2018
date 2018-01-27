@@ -23,10 +23,16 @@ public class LevelController : MonoBehaviour {
 
 
     public string LevelString;
-  
+
+    public bool ResetCountOnWrongActionOrder;
+    public bool ResetOnFailedGoal;
+
+    public static Action<int, bool> OnCurrentActionChanged;
+
 	void OnEnable()
 	{
-		Goal.Complete += OnTouchedOcject;
+		Goal.Complete += OnGoalComplete;
+        Goal.Failed += OnGoalFailed;
 		if (IsRiddle)
 		{
 			GenerateWordRiddles();
@@ -43,15 +49,38 @@ public class LevelController : MonoBehaviour {
 
 	void OnDisable()
 	{
-		Goal.Complete -= OnTouchedOcject;
-	}
+		Goal.Complete -= OnGoalComplete;
+        Goal.Failed -= OnGoalFailed;
+    }
 
-	void OnTouchedOcject(Goal touchObject)
+    void OnGoalFailed(Goal FailedGoal)
+    {
+        if(ResetOnFailedGoal)
+        {
+            currentOrder = 0;
+            Debug.Log(string.Format("New Action {0},{1}", currentOrder, currentOrder == ActionsOrder.Length));
+            if (OnCurrentActionChanged != null)
+                OnCurrentActionChanged(currentOrder, false);
+        }
+    }
+
+	void OnGoalComplete(Goal completedGoal)
 	{
-		if (currentOrder< ActionsOrder.Length && ActionsOrder[currentOrder] == touchObject)
+        if(ActionsOrder[currentOrder] != completedGoal && ResetCountOnWrongActionOrder)
+        {
+            currentOrder = 0;
+            Debug.Log(string.Format("New Action {0},{1}", currentOrder, currentOrder == ActionsOrder.Length));
+            if(OnCurrentActionChanged!= null)
+                OnCurrentActionChanged(currentOrder, false);
+        }
+
+		else if (currentOrder< ActionsOrder.Length && ActionsOrder[currentOrder] == completedGoal)
 		{
             currentOrder++;
-			if (currentOrder == ActionsOrder.Length)
+            if (OnCurrentActionChanged != null)
+                OnCurrentActionChanged(currentOrder, currentOrder == ActionsOrder.Length);
+            Debug.Log(string.Format("New Action {0},{1}", currentOrder, currentOrder == ActionsOrder.Length));
+            if (currentOrder == ActionsOrder.Length)
 			{
 				FinishLevel();
 			}

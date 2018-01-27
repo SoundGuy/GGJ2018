@@ -33,6 +33,8 @@ public class TouchObject : Goal {
 	public TouchType Touch;
 	public UnityEvent OnTouch;
 
+    public bool FailOnWrongTouch;
+
 	public int TouchLimit;
 
     public bool IsTouched
@@ -90,7 +92,7 @@ public class TouchObject : Goal {
 		{
 			return;
 		}
-		Debug.Log("OnTriggerEnter");
+
 
         //here be dragons this should be moved somewhere else becasue now the trigger enter isnt the goal necceseraly
 		if (TouchLimit > 0 && ++touchCount > TouchLimit)
@@ -111,25 +113,41 @@ public class TouchObject : Goal {
 			{
 				CallTouched(otherGo);
 			}
+            else if (FailOnWrongTouch)
+            {
+                FailGoal();
+            }
 			break;
 		case TouchType.Head:
 			if (Head != null)
 			{
 				CallTouched(otherGo);
 			}
-			break;
+            else if (FailOnWrongTouch)
+            {
+                FailGoal();
+            }
+            break;
 		case TouchType.LeftHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.LeftHand)
 			{
 				CallTouched(otherGo);
 			}
-			break;
+            else if (FailOnWrongTouch)
+            {
+                FailGoal();
+            }
+                break;
 		case TouchType.RightHand:
 			if (Hand != null && Hand.Joint == UnityEngine.XR.XRNode.RightHand)
 			{
 				CallTouched(otherGo);
 			}
-			break;
+            else if (FailOnWrongTouch)
+            {
+                FailGoal();
+            }
+            break;
         case TouchType.Other:
             if(other == OtherTarget)
             {
@@ -166,6 +184,7 @@ public class TouchObject : Goal {
 
         TouchingMe = other.GetComponent<JointController>();
 	}
+
 
     public void Destroy()
     {
