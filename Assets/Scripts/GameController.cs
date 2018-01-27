@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class GameController : MonoBehaviour {
 
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour {
 	void Awake()
 	{
 		Instance = this;
+		XRSettings.showDeviceView = false;
 	}
 
 	void Start()
