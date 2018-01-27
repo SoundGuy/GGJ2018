@@ -8741,14 +8741,14 @@ MonoBehaviour:
   - UI
   - RoomVr01
   ScenesOrder:
-  - StepOnTeleposter
+  - TwoAtOnce
   - GetFirstCode
   - ButtonsInRightOrder
   - Keycard
   - ByOrder
   - TwoAtOnce
   - EndScene
-  - EndScene
+  - StepOnTeleposter
   LevelEndWaitTime: 1
 --- !u!4 &2049948468
 Transform:
