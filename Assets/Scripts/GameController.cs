@@ -138,9 +138,12 @@ public class GameController : MonoBehaviour {
 	{
 		Debug.Log("LoadScene " + currentScene);
 		SceneManager.LoadScene(ScenesOrder[currentScene], LoadSceneMode.Additive);
-		for (int i=0; i<LevelController.NumOfButtons; i++)
+		if (GUIController.Instance != null)
 		{
-			GUIController.Instance.SetButtonEnable(i, false);
+			for (int i=0; i<LevelController.NumOfButtons; i++)
+			{
+				GUIController.Instance.SetButtonEnable(i, false);
+			}
 		}
 	}
 
