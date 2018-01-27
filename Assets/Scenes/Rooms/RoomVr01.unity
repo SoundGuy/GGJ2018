@@ -888,7 +888,6 @@ GameObject:
   - component: {fileID: 964229317}
   - component: {fileID: 964229316}
   - component: {fileID: 964229315}
-  - component: {fileID: 964229314}
   - component: {fileID: 964229313}
   m_Layer: 12
   m_Name: door_3 (1)
@@ -912,18 +911,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e497b40124d368543a1971d44952f2d5, type: 3}
---- !u!114 &964229314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11487808, guid: 2d927feb0fbf1a7429c095369d395de7,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964229312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &964229315
 Animator:
   serializedVersion: 3
@@ -1161,7 +1148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106282, guid: 548a40efc092c6f408cc4d1691b171cc, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 106282, guid: 548a40efc092c6f408cc4d1691b171cc, type: 2}
       propertyPath: m_Layer
@@ -1821,7 +1808,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106282, guid: 548a40efc092c6f408cc4d1691b171cc, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 106282, guid: 548a40efc092c6f408cc4d1691b171cc, type: 2}
       propertyPath: m_Layer
@@ -1979,7 +1966,6 @@ GameObject:
   - component: {fileID: 2129410613}
   - component: {fileID: 2129410612}
   - component: {fileID: 2129410611}
-  - component: {fileID: 2129410610}
   - component: {fileID: 2129410609}
   m_Layer: 12
   m_Name: door_3 (2)
@@ -2003,18 +1989,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e497b40124d368543a1971d44952f2d5, type: 3}
---- !u!114 &2129410610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11487808, guid: 2d927feb0fbf1a7429c095369d395de7,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2129410608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2129410611
 Animator:
   serializedVersion: 3
