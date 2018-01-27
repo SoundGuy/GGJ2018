@@ -22,7 +22,7 @@ public class TouchObject : Goal {
         Other
 	}
     public string InputAxisName;
-    public GameObject TouchingMe { get; private set; }
+    public JointController TouchingMe { get; private set; }
     public Collider OtherTarget;
     public bool Movable;
     public bool ClickToComplete;
@@ -44,7 +44,11 @@ public class TouchObject : Goal {
     {
         get
         {
-            return (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null;
+            return (TouchingMe != null
+                && (
+                    (Input.GetButton("Right Trigger") && TouchingMe.Joint == UnityEngine.XR.XRNode.RightHand) 
+                    || (Input.GetButton("Left Trigger") && TouchingMe.Joint == UnityEngine.XR.XRNode.LeftHand))
+                );
         }
     }
 
@@ -56,7 +60,7 @@ public class TouchObject : Goal {
     {
         if (Movable)
         {
-            if (oldParent == null && (Input.GetButton("Right Trigger") || Input.GetButton("Left Trigger")) && TouchingMe != null)
+            if (oldParent == null && IsHeld)
             {
                 oldParent = transform.parent;
                 transform.SetParent(TouchingMe.transform);
@@ -143,7 +147,7 @@ public class TouchObject : Goal {
         if(!ClickToComplete)
             CompleteGoal();
 
-        TouchingMe = other;
+        TouchingMe = other.GetComponent<JointController>();
 	}
 
 
