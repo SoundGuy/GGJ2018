@@ -307,13 +307,21 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: FailOnWrongTouch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: SoundOnFailure
       value: 
       objectReference: {fileID: 1725513039}
+    - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500450798258884, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
@@ -419,7 +427,7 @@ GameObject:
   - component: {fileID: 408879481}
   - component: {fileID: 408879480}
   - component: {fileID: 408879479}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: TextMeshPro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,13 +722,21 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: FailOnWrongTouch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: SoundOnFailure
       value: 
       objectReference: {fileID: 394713904}
+    - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500450798258884, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
@@ -741,7 +757,7 @@ GameObject:
   - component: {fileID: 650493299}
   - component: {fileID: 650493298}
   - component: {fileID: 650493297}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: TextMeshPro (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +953,7 @@ GameObject:
   - component: {fileID: 718751677}
   - component: {fileID: 718751676}
   - component: {fileID: 718751675}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: TextMeshPro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1149,7 @@ GameObject:
   - component: {fileID: 732212507}
   - component: {fileID: 732212506}
   - component: {fileID: 732212505}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: TextMeshPro (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1444,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952, type: 2}
       propertyPath: m_text
@@ -1530,10 +1546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsRiddle: 1
   ActionsOrder:
-  - {fileID: 423084258}
   - {fileID: 840918163}
-  - {fileID: 1725513040}
+  - {fileID: 423084258}
   - {fileID: 242118664}
+  - {fileID: 1725513040}
   EndButton: 0
   EnabledButtons: 00000000
   ButtonsTexts:
@@ -1548,7 +1564,7 @@ MonoBehaviour:
   - {fileID: 0}
   LevelString: Notice the RIGHT order.
   ResetCountOnWrongActionOrder: 1
-  ResetOnFailedGoal: 1
+  ResetOnFailedGoal: 0
 --- !u!4 &1319684318
 Transform:
   m_ObjectHideFlags: 0
@@ -1630,13 +1646,21 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: FailOnWrongTouch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: SoundOnFailure
       value: 
       objectReference: {fileID: 1790695044}
+    - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500450798258884, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
@@ -1998,13 +2022,21 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: FailOnWrongTouch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: SoundOnFailure
       value: 
       objectReference: {fileID: 242118663}
+    - target: {fileID: 1500450798258884, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
