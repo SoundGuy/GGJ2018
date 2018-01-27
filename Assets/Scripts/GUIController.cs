@@ -17,6 +17,10 @@ public class GUIController : MonoBehaviour {
 	void Awake()
 	{
 		Instance = this;
+		for (int i=0; i<LevelController.NumOfButtons; i++)
+		{
+			GUIController.Instance.SetButtonEnable(i, false);
+		}
 	}
 
     public void SetTopText(string inText)
