@@ -83,8 +83,12 @@ public class GameController : MonoBehaviour {
 
 	void HandleOnLevelEnd(LevelController levelController)
 	{
+		UpdateButtonsForLevel(levelController);
+	}
+
+	void UpdateButtonsForLevel(LevelController levelController)
+	{
 		correctButton = levelController.EndButton;
-		//GUIController.Instance.SetButtonEnable();
 		for (int i=0; i<levelController.EnabledButtons.Length; i++)
 		{
 			GUIController.Instance.SetButtonEnable(i, levelController.EnabledButtons[i]);
@@ -108,6 +112,12 @@ public class GameController : MonoBehaviour {
 		{
 			Teleporter.StartTeleporter();
 			Instance.StartCoroutine(DelayLevelEnd());
+		}
+		else
+		{
+			LevelController lvl = FindObjectOfType<LevelController>();
+			lvl.GenerateWordRiddles();
+			UpdateButtonsForLevel(lvl);
 		}
 	}
 

@@ -83,6 +83,10 @@ public class TouchObject : Goal {
     }
     void OnTriggerEnter(Collider other)
 	{
+		if (!enabled)
+		{
+			return;
+		}
 		Debug.Log("OnTriggerEnter");
 
         //here be dragons this should be moved somewhere else becasue now the trigger enter isnt the goal necceseraly
@@ -133,7 +137,11 @@ public class TouchObject : Goal {
 	}
 
     private void OnTriggerExit(Collider other)
-    {
+	{
+		if (!enabled)
+		{
+			return;
+		}
         IsTouched = false;
 
         if(TouchingMe!= null && other.gameObject == TouchingMe.gameObject)

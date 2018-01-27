@@ -9,10 +9,19 @@ public class UpdateRiddleText : MonoBehaviour {
 
 	// Use this for initialization
 	void OnEnable() {
-        LevelController lvl = FindObjectOfType<LevelController>();
-        TextMeshPro textmeshPro = GetComponent<TextMeshPro>();
-        textmeshPro.text = lvl.ButtonsTexts[lvl.EndButton];
+		UpdateText();
+		LevelController.OnGeneratedRiddle += UpdateText;
+	}
+
+	void OnDisable()
+	{
+		LevelController.OnGeneratedRiddle -= UpdateText;
 	}
 	
-	
+	void UpdateText()
+	{
+		LevelController lvl = FindObjectOfType<LevelController>();
+		TextMeshPro textmeshPro = GetComponent<TextMeshPro>();
+		textmeshPro.text = lvl.ButtonsTexts[lvl.EndButton];
+	}
 }

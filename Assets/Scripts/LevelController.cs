@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour {
 	public const int NumOfButtons = 4;
 
 	public static Action<LevelController> OnLevelEnd;
+	public static Action OnGeneratedRiddle;
 
 	public bool IsRiddle = false;
 
@@ -73,6 +74,10 @@ public class LevelController : MonoBehaviour {
 		{
 			EnabledButtons[i] = true;
 			ButtonsImages[i] = null;
+		}
+		if (OnGeneratedRiddle != null)
+		{
+			OnGeneratedRiddle();
 		}
 	}
 
