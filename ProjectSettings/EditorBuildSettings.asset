@@ -9,23 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: b535b55f68d2aa442933532b253928e7
   - enabled: 1
-    path: Assets/Scenes/Level0Objects.unity
+    path: Assets/Scenes/Levels/StepOnTeleposter.unity
     guid: 3ffa376e3ec31104b9a8bba51661b845
   - enabled: 1
-    path: Assets/Scenes/LevelObjects.unity
+    path: Assets/Scenes/Levels/GetFirstCode.unity
     guid: 97adc8fab614d314baddc9fbbdbd8bbd
   - enabled: 1
-    path: Assets/Scenes/Level2Objects.unity
+    path: Assets/Scenes/Levels/ButtonsInRightOrder.unity
     guid: 737f7f46eee55be4ebdc8e2045f76bd8
   - enabled: 1
-    path: Assets/Scenes/Level2AObjects.unity
+    path: Assets/Scenes/Levels/Keycard.unity
     guid: 96bbaa09d5273eb4da91fc65593e1ed6
   - enabled: 1
-    path: Assets/Scenes/Level3Objects.unity
+    path: Assets/Scenes/Levels/ByOrder.unity
     guid: e914a8ab437c9374d80b2f89b5f88a2c
   - enabled: 1
-    path: Assets/Scenes/Level4Objects.unity
+    path: Assets/Scenes/Levels/TwoAtOnce.unity
     guid: e73514eb0e5e29641b6fe2a5ac0453f5
+  - enabled: 1
+    path: Assets/Scenes/Rooms/RoomVr01.unity
+    guid: 051cc04bf29705a41ac0051922de2ec5
   - enabled: 1
     path: Assets/Scenes/RoomSetup.unity
     guid: 9ec57bfc47fa39e4c9df4f56226b5eed
