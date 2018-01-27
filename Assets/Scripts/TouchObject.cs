@@ -75,6 +75,11 @@ public class TouchObject : Goal {
         {
             CompleteGoal();
         }
+
+        if(IsHeld)
+        {
+            Debug.Log(string.Format("{0} is Held By {1}", name, TouchingMe.Joint));
+        }
     }
     void OnTriggerEnter(Collider other)
 	{
