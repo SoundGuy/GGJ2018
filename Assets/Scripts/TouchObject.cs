@@ -155,6 +155,7 @@ public class TouchObject : Goal {
         IsTouched = true;
 		if (Touched != null)
 			Touched (this);
+		
 		OnTouch.Invoke();
 
         if(!ClickToComplete)
