@@ -26,6 +26,7 @@ public class SimultaneousHoldGoal : Goal {
         if (complete)
         {
             CompleteGoal();
+            Goal.Complete -= SubGoalTouched;
         }
     }
 }
