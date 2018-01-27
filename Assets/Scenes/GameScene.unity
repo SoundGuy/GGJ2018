@@ -7432,6 +7432,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1742348594887098, guid: ba39e8296d5e46d44860584b4dcc7c6b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba39e8296d5e46d44860584b4dcc7c6b, type: 2}
   m_IsPrefabParent: 0
@@ -7806,7 +7810,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 26
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 2.5
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 518889922}
@@ -7886,7 +7890,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 2.5
   far clip plane: 5000
   field of view: 26
   orthographic: 0
@@ -8737,14 +8741,14 @@ MonoBehaviour:
   - UI
   - RoomVr01
   ScenesOrder:
-  - TwoAtOnce
+  - StepOnTeleposter
   - GetFirstCode
   - ButtonsInRightOrder
   - Keycard
   - ByOrder
   - TwoAtOnce
   - EndScene
-  - StepOnTeleposter
+  - EndScene
   LevelEndWaitTime: 1
 --- !u!4 &2049948468
 Transform:
