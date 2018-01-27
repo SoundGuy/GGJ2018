@@ -568,7 +568,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (5)
+      value: Keycard
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -1052,7 +1052,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1771470983597708, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
       propertyPath: m_Name
-      value: Cube (6)
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -1072,7 +1072,7 @@ Prefab:
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
@@ -1083,22 +1083,27 @@ Prefab:
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 542720841}
+      objectReference: {fileID: 840918163}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: set_parent
+      value: Destroy
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Transform, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1528932127}
+      objectReference: {fileID: 0}
+    - target: {fileID: 114325590097396798, guid: 32cb3806439534c45b90fd0310ab25db,
+        type: 2}
+      propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Destroy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
   m_IsPrefabParent: 0
