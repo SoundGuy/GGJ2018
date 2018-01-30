@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ae9e619eaee45449a96dc1fde0085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundOnComplete: {fileID: 1534247328}
+  SoundOnComplete: {fileID: 1213039266}
   SoundOnFailure: {fileID: 1213039266}
   SubGoals:
   - {fileID: 396709524}
@@ -727,7 +727,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1319684318}
   - component: {fileID: 1319684317}
-  - component: {fileID: 1319684319}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -777,22 +776,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1319684319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1319684316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ae9e619eaee45449a96dc1fde0085b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundOnComplete: {fileID: 1213039266}
-  SoundOnFailure: {fileID: 0}
-  SubGoals:
-  - {fileID: 396709524}
-  - {fileID: 1213039264}
 --- !u!4 &1395202075 stripped
 Transform:
   m_PrefabParentObject: {fileID: 447618, guid: 6456a4784f31cab439d29b7e3bb286a4, type: 2}
@@ -921,11 +904,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: c459dc8cf2a04624eb4d91f0b9ef9daa, type: 2}
   m_PrefabInternal: {fileID: 1504245592}
---- !u!82 &1534247328 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82516968049456390, guid: 32cb3806439534c45b90fd0310ab25db,
-    type: 2}
-  m_PrefabInternal: {fileID: 542720840}
 --- !u!1001 &1553735266
 Prefab:
   m_ObjectHideFlags: 0
