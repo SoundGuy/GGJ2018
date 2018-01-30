@@ -66,7 +66,11 @@ public class LevelController : MonoBehaviour {
 
 	void OnGoalComplete(Goal completedGoal)
 	{
-        if(ActionsOrder[currentOrder] != completedGoal && ResetCountOnWrongActionOrder)
+		if (currentOrder >= ActionsOrder.Length)
+		{
+			FinishLevel();
+		}
+        else if(ActionsOrder[currentOrder] != completedGoal && ResetCountOnWrongActionOrder)
         {
             currentOrder = 0;
             Debug.Log(string.Format("New Action {0},{1}", currentOrder, currentOrder == ActionsOrder.Length));
