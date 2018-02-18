@@ -54,7 +54,12 @@ public class TouchObject : Goal {
         }
     }
 
-	private int touchCount;
+    internal void NotifyAboutSelfDestruct()
+    {
+        FailGoal();
+    }
+
+    private int touchCount;
 
     private Transform oldParent;
     private void Start()

@@ -248,7 +248,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -466,6 +466,10 @@ Prefab:
         type: 2}
       propertyPath: OnTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500450798258884, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32cb3806439534c45b90fd0310ab25db, type: 2}
@@ -885,6 +889,10 @@ Prefab:
       propertyPath: m_Name
       value: L_Eletric_ball - for touch effect
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: c459dc8cf2a04624eb4d91f0b9ef9daa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c459dc8cf2a04624eb4d91f0b9ef9daa, type: 2}
   m_IsPrefabParent: 0
@@ -1047,15 +1055,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927860798}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 193e2437d9eb4ef479fd10fd8ebb282c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDestctuctTimer: 0
-  SelfDestctuctFuseTime: 0
+  SelfDestctuctFuseTime: 5
   destroyParent: 0
-  autoSelfDestruct: 0
+  autoSelfDestruct: 1
+  disableInsteadOfDistruct: 1
+  touchObejct: {fileID: 0}
 --- !u!95 &1927860800
 Animator:
   serializedVersion: 3

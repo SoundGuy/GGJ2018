@@ -52,9 +52,14 @@ public class LevelController : MonoBehaviour {
 		Goal.Complete -= OnGoalComplete;
         Goal.Failed -= OnGoalFailed;
     }
-
+    
     void OnGoalFailed(Goal FailedGoal)
     {
+        if (IsRiddle)
+        {
+            GenerateWordRiddles();
+
+        }
         if(ResetOnFailedGoal)
         {
             currentOrder = 0;
@@ -91,6 +96,12 @@ public class LevelController : MonoBehaviour {
 		}
 	}
 
+    public void FailLevel()
+    {
+        //Debug.Log(ActionsOrder);
+        //Debug.Log(currentOrder);
+        ActionsOrder[currentOrder -1].FailGoal();
+    }
 	void FinishLevel()
 	{
 		if (OnLevelEnd != null)

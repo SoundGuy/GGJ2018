@@ -10489,7 +10489,7 @@ GameObject:
   - component: {fileID: 174792354}
   - component: {fileID: 174792357}
   - component: {fileID: 174792355}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10564,7 +10564,7 @@ GameObject:
   - component: {fileID: 249139405}
   - component: {fileID: 249139408}
   - component: {fileID: 249139406}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36150,6 +36150,11 @@ Prefab:
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114318058769307918, guid: 33bf2b19481888545948a55e8e499a6a,
+        type: 2}
+      propertyPath: debugScene
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33bf2b19481888545948a55e8e499a6a, type: 2}

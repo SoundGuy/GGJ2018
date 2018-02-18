@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
 
 	private int correctButton = 0;
 
+    public int debugScene =0;
+
 	void Awake()
 	{
 		Instance = this;
@@ -49,6 +51,12 @@ public class GameController : MonoBehaviour {
 			}
 			i++;
 		}
+
+        if (debugScene != 0)
+        {
+            currentScene = debugScene;
+        }
+
 		LoadCurrentScene();
 	}
 
@@ -123,6 +131,7 @@ public class GameController : MonoBehaviour {
 		else
 		{
 			LevelController lvl = FindObjectOfType<LevelController>();
+            lvl.FailLevel();
 			lvl.GenerateWordRiddles();
 			UpdateButtonsForLevel(lvl);
 		}

@@ -12,7 +12,7 @@ public class Goal : MonoBehaviour {
     public AudioSource SoundOnComplete;
     public AudioSource SoundOnFailure;
 
-    protected void FailGoal()
+    public void FailGoal()
     {
         if(SoundOnFailure)
         {
