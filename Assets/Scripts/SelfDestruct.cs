@@ -41,7 +41,10 @@ public class SelfDestruct : MonoBehaviour {
 
     private void NotifyTouchObject()
     {
-        touchObejct.NotifyAboutSelfDestruct();
+        if (touchObejct)
+        {
+            touchObejct.NotifyAboutSelfDestruct();
+        }
     }
 
     void OnEnable()

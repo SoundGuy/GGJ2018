@@ -100,7 +100,7 @@ public class LevelController : MonoBehaviour {
     {
         //Debug.Log(ActionsOrder);
         //Debug.Log(currentOrder);
-        ActionsOrder[currentOrder -1].FailGoal();
+        ActionsOrder[0].FailGoal(); // which one i fail?
     }
 	void FinishLevel()
 	{

@@ -36154,7 +36154,7 @@ Prefab:
     - target: {fileID: 114318058769307918, guid: 33bf2b19481888545948a55e8e499a6a,
         type: 2}
       propertyPath: debugScene
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33bf2b19481888545948a55e8e499a6a, type: 2}
@@ -36242,6 +36242,7 @@ GameObject:
   - component: {fileID: 1801879250}
   - component: {fileID: 1801879253}
   - component: {fileID: 1801879254}
+  - component: {fileID: 1801879255}
   m_Layer: 10
   m_Name: NewTeleoporter
   m_TagString: Untagged
@@ -39886,6 +39887,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1801879255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1801879249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193e2437d9eb4ef479fd10fd8ebb282c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDestctuctTimer: 0
+  SelfDestctuctFuseTime: 6
+  destroyParent: 0
+  autoSelfDestruct: 1
+  disableInsteadOfDistruct: 1
+  touchObejct: {fileID: 0}
 --- !u!1 &1851902842
 GameObject:
   m_ObjectHideFlags: 0

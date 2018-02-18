@@ -56,7 +56,7 @@ public class TouchObject : Goal {
 
     internal void NotifyAboutSelfDestruct()
     {
-        FailGoal();
+        //FailGoal();
     }
 
     private int touchCount;
